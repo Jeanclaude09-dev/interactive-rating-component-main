@@ -10,8 +10,13 @@ thankCard.classList.add("hidden");
 
 ratingButton.forEach((btn) => {
   btn.addEventListener("click", () => {
+    ratingButton.forEach((b) => {
+      b.classList.remove("bg-white", "text-grey-900");
+      b.classList.add("bg-grey-500/10");
+    });
+
     btn.classList.remove("bg-grey-500/10");
-    btn.classList.add("bg-white");
+    btn.classList.add("bg-white", "text-grey-900");
 
     currentRating = btn.dataset.rate;
   });
